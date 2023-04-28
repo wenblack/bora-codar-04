@@ -31,7 +31,7 @@ export default function Home() {
           </div>
           <div id="close-chat">
             <i className="ph-x-fill">
-              <X></X>
+              <X weight='bold'></X>
             </i>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
           <input type="text" placeholder="Digite sua mensagem" />
           <button>
             <i className="ph-paper-plane-right-fill">
-              <PaperPlaneRight />
+              <PaperPlaneRight weight='fill' />
             </i>
           </button>
         </form>
