@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useEffect } from 'react';
 import { teste } from '@/scripts';
+import { X, PaperPlaneRight } from '@phosphor-icons/react'
 
 export default function Home() {
   useEffect(() => {
@@ -29,7 +30,9 @@ export default function Home() {
             </div>
           </div>
           <div id="close-chat">
-            <i className="ph-x-fill"></i>
+            <i className="ph-x-fill">
+              <X></X>
+            </i>
           </div>
         </div>
         <div id="messages">
@@ -60,7 +63,9 @@ export default function Home() {
         <form id="bottom">
           <input type="text" placeholder="Digite sua mensagem" />
           <button>
-            <i className="ph-paper-plane-right-fill"></i>
+            <i className="ph-paper-plane-right-fill">
+              <PaperPlaneRight />
+            </i>
           </button>
         </form>
       </div>
