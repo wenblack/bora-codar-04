@@ -18,14 +18,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div id="app">
-        <div id="top">
-          <Header></Header>
+        <header id="top">
+          <Header name='Cecilia Sassaki' status='Online' />
           <div id="close-chat">
             <i className="ph-x-fill">
               <X weight='bold'></X>
             </i>
           </div>
-        </div>
+        </header>
         <div id="messages">
           <div id="last-seen">Hoje 11:30</div>
 
