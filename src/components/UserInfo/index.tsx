@@ -3,7 +3,7 @@ interface UserProps {
     status?: "Online" | "Offline"
 }
 
-export function Header({ name, status }: UserProps) {
+export function UserInfo({ name, status }: UserProps) {
     if (status === 'Online') {
         return (
             <div id="user-info">

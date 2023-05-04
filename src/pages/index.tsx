@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect } from 'react';
 import { teste } from '@/scripts';
 import { X, PaperPlaneRight } from '@phosphor-icons/react'
-import { Header } from '@/components/Header';
+import { UserInfo } from '@/components/UserInfo';
 
 export default function Home() {
   useEffect(() => {
@@ -17,17 +17,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <div id="app">
         <header id="top">
-          <Header name='Cecilia Sassaki' status='Online' />
+          <UserInfo name='Cecilia Sassaki' status='Online' />
           <div id="close-chat">
-            <i className="ph-x-fill">
+            <i className="ph-x-fill" title='Close Button'>
               <X weight='bold'></X>
             </i>
           </div>
         </header>
-        <div id="messages">
-          <div id="last-seen">Hoje 11:30</div>
+
+
+        <main id="messages">
+          <div id="last-seen">
+            <span>
+              Hoje 11:30
+            </span>
+          </div>
 
           <div className="messages">
             <div className="message">
@@ -50,15 +57,18 @@ export default function Home() {
               <div className="body"><strong>#boraCodar! 🚀</strong></div>
             </div>
           </div>
-        </div>
-        <form id="bottom">
-          <input type="text" placeholder="Digite sua mensagem" />
-          <button>
-            <i className="ph-paper-plane-right-fill">
-              <PaperPlaneRight weight='fill' />
-            </i>
-          </button>
-        </form>
+        </main>
+
+        <footer>
+          <form id="bottom">
+            <input type="text" placeholder="Digite sua mensagem" />
+            <button>
+              <i className="ph-paper-plane-right-fill">
+                <PaperPlaneRight weight='fill' />
+              </i>
+            </button>
+          </form>
+        </footer>
       </div>
 
     </>

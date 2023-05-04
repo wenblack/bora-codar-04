@@ -81,6 +81,12 @@ body * {
   line-height: 1.4rem;
   text-align: center;
 }
+#last-seen  span {
+  background: black;
+  padding:0.5rem;
+  border-radius:5px;
+  color: gray
+}
 
 #messages {
   overflow-y: scroll;
