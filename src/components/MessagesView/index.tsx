@@ -1,6 +1,7 @@
 import { Message } from "../Message";
 import { useState, useEffect } from 'react';
 import { MessageProps } from "../Message";
+import { LoadingView } from "../LoadingView";
 
 
 export function MessagesView() {
@@ -18,7 +19,7 @@ export function MessagesView() {
             });
     }, []);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <LoadingView />
 
 
     return (
