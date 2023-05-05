@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useEffect } from 'react';
 import { main } from '@/scripts';
-import { X, PaperPlaneRight } from '@phosphor-icons/react'
+import { X } from '@phosphor-icons/react'
 import { UserInfo } from '@/components/UserInfo';
-import { Message } from '@/components/Message';
 import { MessagesView } from '@/components/MessagesView';
+import { InputChat } from '@/components/InputChat';
 
 export default function Home() {
   useEffect(() => {
@@ -33,14 +33,7 @@ export default function Home() {
         <MessagesView />
 
         <footer>
-          <form id="bottom">
-            <input type="text" placeholder="Digite sua mensagem" />
-            <button>
-              <i className="ph-paper-plane-right-fill">
-                <PaperPlaneRight weight='fill' />
-              </i>
-            </button>
-          </form>
+          <InputChat />
         </footer>
       </div>
     </>
