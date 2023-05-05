@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect } from 'react';
-import { teste } from '@/scripts';
+import { main } from '@/scripts';
 import { X, PaperPlaneRight } from '@phosphor-icons/react'
 import { UserInfo } from '@/components/UserInfo';
 import { Message } from '@/components/Message';
@@ -8,7 +8,7 @@ import { Message } from '@/components/Message';
 
 export default function Home() {
   useEffect(() => {
-    teste()
+    main()
   }, []);
 
   return (
