@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { teste } from '@/scripts';
 import { X, PaperPlaneRight } from '@phosphor-icons/react'
 import { UserInfo } from '@/components/UserInfo';
+import { Message } from '@/components/Message';
+
 
 export default function Home() {
   useEffect(() => {
@@ -37,25 +39,34 @@ export default function Home() {
           </div>
 
           <div className="messages">
-            <div className="message">
-              <div className="top">Cecilia - 11:30</div>
-              <div className="body">Tive uma ideia incrível para um projeto! 😍</div>
-            </div>
-            <div className="message you">
-              <div className="top">Você - 11:32</div>
-              <div className="body">Sério? Me conta mais.</div>
-            </div>
-            <div className="message">
-              <div className="top">Cecilia - 11:34</div>
-              <div className="body">
-                E se a gente fizesse um chat moderno e responsivo em apenas uma
-                semana?
-              </div>
-            </div>
-            <div className="message you">
-              <div className="top">Você - 11:36</div>
-              <div className="body"><strong>#boraCodar! 🚀</strong></div>
-            </div>
+            <Message
+              message='Tive uma ideia incrível para um projeto! 😍'
+              hour='11:30'
+              name='Cecília'
+              type='received'
+            />
+
+            <Message
+              message='Sério? Me conta mais.'
+              hour='11:30'
+              name='Você'
+              type='sent'
+            />
+
+            <Message
+              message='E se a gente fizesse um chat moderno e responsivo em apenas uma
+              semana?'
+              hour='11:31'
+              name='Cecília'
+              type='received'
+            />
+
+            <Message
+              message='#boraCodar! 🚀'
+              hour='11:32'
+              name='Você'
+              type='sent'
+            />
           </div>
         </main>
 
