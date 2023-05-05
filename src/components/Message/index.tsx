@@ -1,4 +1,4 @@
-interface MessageProps {
+export interface MessageProps {
     type: "sent" | "received"
     name: string
     hour: string

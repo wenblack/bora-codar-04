@@ -1,15 +1,11 @@
 import Head from 'next/head'
-import { useEffect } from 'react';
-import { main } from '@/scripts';
 import { X } from '@phosphor-icons/react'
 import { UserInfo } from '@/components/UserInfo';
 import { MessagesView } from '@/components/MessagesView';
 import { InputChat } from '@/components/InputChat';
 
 export default function Home() {
-  useEffect(() => {
-    main()
-  }, []);
+
 
   return (
     <>

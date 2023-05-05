@@ -1,7 +1,26 @@
 import { Message } from "../Message";
+import { useState, useEffect } from 'react';
+import { MessageProps } from "../Message";
 
 
 export function MessagesView() {
+    const [data, setData] = useState<MessageProps[]>([]);
+    const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        fetch('/api/messages')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data.messages);
+                setLoading(false);
+                console.log(data)
+            });
+    }, []);
+
+    if (isLoading) return <p>Loading...</p>;
+
+
     return (
         <main id="messages">
             <div id="last-seen">
@@ -11,34 +30,19 @@ export function MessagesView() {
             </div>
 
             <div className="messages">
-                <Message
-                    message='Tive uma ideia incrível para um projeto! 😍'
-                    hour='11:30'
-                    name='Cecília'
-                    type='received'
-                />
+                {
+                    data.map((message, i) =>
 
-                <Message
-                    message='Sério? Me conta mais.'
-                    hour='11:30'
-                    name='Você'
-                    type='sent'
-                />
-
-                <Message
-                    message='E se a gente fizesse um chat moderno e responsivo em apenas uma
-              semana?'
-                    hour='11:31'
-                    name='Cecília'
-                    type='received'
-                />
-
-                <Message
-                    message='#boraCodar! 🚀'
-                    hour='11:32'
-                    name='Você'
-                    type='sent'
-                />
+                        <Message
+                            hour={message.hour}
+                            message={message.message}
+                            name={message.name}
+                            type={message.type}
+                            bold={message.bold}
+                            key={i}
+                        />
+                    )
+                }
             </div>
         </main>
 
