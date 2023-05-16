@@ -15,7 +15,7 @@ export function UserInfo({ name, status }: UserProps) {
                     alt="Mulher asiatica com gorro preto, óculos e cabelo preto até os ombros"
                     width={128}
                     height={128}
-
+                    priority
                 />
                 <div id="user-status">
                     <strong>{name}</strong>

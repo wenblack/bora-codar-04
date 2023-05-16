@@ -93,6 +93,8 @@ body * {
   padding-bottom: 2.4rem;
 }
 
+
+
 #messages::-webkit-scrollbar {
   display: none;
 }
@@ -127,6 +129,16 @@ body * {
 
 .message.you .body {
   background-color: #07847e;
+  border-radius: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.error {
+  display: flex;
+  alignItems: center;
+  justifyContent: center;
+  background-color: #07847e;
+  color:#e1e1e6 ;
+  padding: 1rem;
   border-radius: 0.8rem 0.8rem 0 0.8rem;
 }
 

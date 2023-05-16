@@ -1,21 +1,27 @@
 import { Message } from "../Message";
-import { useState, useEffect } from 'react';
-import { MessageProps } from "../Message";
+import { useState, useEffect, useContext } from 'react';
+import { MessageProps } from "@/context";
 import { LoadingView } from "../LoadingView";
+import { ContexType, Message_data } from "@/context";
+import { MessageError } from "../MessageError";
+
 
 
 export function MessagesView() {
     const [data, setData] = useState<MessageProps[]>([]);
     const [isLoading, setLoading] = useState(false);
+    const { message, saveData } = useContext(Message_data) as ContexType;
 
     useEffect(() => {
         setLoading(true);
         fetch('/api/messages')
             .then((res) => res.json())
-            .then((data) => {
-                setData(data.messages);
+            .then((message) => {
+                setData(message.messages);
+                saveData(message.messages)
                 setLoading(false);
-                console.log(data)
+                console.log(message)
+
             });
     }, []);
 
@@ -44,6 +50,7 @@ export function MessagesView() {
                         />
                     )
                 }
+                <MessageError />
             </div>
         </main>
 

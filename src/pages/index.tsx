@@ -6,7 +6,6 @@ import { InputChat } from '@/components/InputChat';
 
 export default function Home() {
 
-
   return (
     <>
       <Head>
