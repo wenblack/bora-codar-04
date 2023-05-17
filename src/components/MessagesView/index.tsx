@@ -25,7 +25,7 @@ export function MessagesView({ children }: ViewProps) {
                 console.log(message)
 
             });
-    }, []);
+    }, [saveData]);
 
     if (isLoading) return <LoadingView />
 
@@ -52,7 +52,9 @@ export function MessagesView({ children }: ViewProps) {
                         />
                     )
                 }
-                {children}
+                <>
+                    {children}
+                </>
             </div>
         </main>
 

@@ -26,7 +26,9 @@ export default function Home() {
           </div>
         </header>
 
-        <MessagesView children={<MessageError />} />
+        <MessagesView >
+          <MessageError />
+        </MessagesView>
 
         <footer>
           <InputChat />
