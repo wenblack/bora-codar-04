@@ -3,9 +3,9 @@ import { X } from '@phosphor-icons/react'
 import { UserInfo } from '@/components/UserInfo';
 import { MessagesView } from '@/components/MessagesView';
 import { InputChat } from '@/components/InputChat';
+import { MessageError } from '@/components/MessageError';
 
 export default function Home() {
-
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </header>
 
-        <MessagesView />
+        <MessagesView children={<MessageError />} />
 
         <footer>
           <InputChat />

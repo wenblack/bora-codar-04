@@ -1,13 +1,15 @@
 import { Message } from "../Message";
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, ReactElement } from 'react';
 import { MessageProps } from "@/context";
 import { LoadingView } from "../LoadingView";
 import { ContexType, Message_data } from "@/context";
 import { MessageError } from "../MessageError";
 
+interface ViewProps {
+    children?: ReactElement
+}
 
-
-export function MessagesView() {
+export function MessagesView({ children }: ViewProps) {
     const [data, setData] = useState<MessageProps[]>([]);
     const [isLoading, setLoading] = useState(false);
     const { message, saveData } = useContext(Message_data) as ContexType;
@@ -50,7 +52,7 @@ export function MessagesView() {
                         />
                     )
                 }
-                <MessageError />
+                {children}
             </div>
         </main>
 

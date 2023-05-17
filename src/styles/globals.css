@@ -41,6 +41,10 @@ body * {
   justify-content: space-between;
 }
 
+a , i,button:hover{
+  cursor: pointer
+}
+
 #user-info {
   display: flex;
   align-items: center;
@@ -52,6 +56,10 @@ body * {
   height: 4.8rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+#user-info  :hover {
+  cursor: pointer
 }
 
 #user-status .status {

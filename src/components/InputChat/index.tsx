@@ -1,14 +1,12 @@
 import { ContexType, MessageProps, Message_data } from "@/context";
 import { PaperPlaneRight } from "@phosphor-icons/react";
 import { MouseEventHandler, useContext, useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
-
-interface inputProps {
-    onClick: MouseEventHandler | undefined
-}
 
 
 export function InputChat() {
+    const router = useRouter();
     const [data, setData] = useState<MessageProps[]>([]);
     const [newMessage, setnewMessage] = useState('')
     const { message, saveData } = useContext(Message_data) as ContexType;
@@ -16,18 +14,12 @@ export function InputChat() {
     function changeText(e: any) {
         e.preventDefault()
         setnewMessage(e.target.value)
-        console.log(newMessage)
+        console.log("Digitado: " + newMessage)
     }
 
     async function updateNewMessage(e: any) {
         e.preventDefault()
-        await fetch('/api/messages')
-            .then((res) => res.json())
-            .then((message) => {
-                setData(message.messages);
-                saveData(message.messages)
-                console.log(message)
-            });
+        router.push('/send')
     }
 
     return (
